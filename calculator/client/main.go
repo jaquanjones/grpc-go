@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	pb "github.com/jaquanjones/grpc-go/greet/proto"
+	pb "github.com/jaquanjones/grpc-go/calculator/proto"
 
 )
 
@@ -24,7 +24,7 @@ func main() {
 	}
 
 	defer conn.Close()
-	c := pb.NewGreetServiceClient(conn)
+	c := pb.NewCalculatorServiceClient(conn)
 	
-	doGreet(c)
+	doSum(c)
 }
